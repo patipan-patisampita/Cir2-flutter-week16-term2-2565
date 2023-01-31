@@ -26,7 +26,7 @@ class _DateInputFieldState extends State<DateInputField> {
                   context: context,
                   initialDate: DateTime.now(), //get today's date
                   firstDate:DateTime(1000), //DateTime.now() - not to allow to choose before today.
-                  lastDate: DateTime(2100)
+                  lastDate: DateTime(2500)
               );
               widget.dateInput.text =
               "${_date!.day}/${_date.month}/${_date.year}";
