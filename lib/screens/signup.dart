@@ -37,6 +37,21 @@ class _SignUpState extends State<SignUp> {
                     prefixIcon: Icon(Icons.email),
                     suffixIcon: Icon(Icons.check),
                   ),
+                keyboardType: TextInputType.emailAddress,
+              ),
+              SizedBox(height: 8.0),
+              TextFormField(
+                controller: _password,
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  // icon: Icon(Icons.person),
+                  hintText: 'กรุณาป้อนข้อมูลรหัสผ่าน',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: Icon(Icons.check),
+                ),
               ),
             ],
           ),
