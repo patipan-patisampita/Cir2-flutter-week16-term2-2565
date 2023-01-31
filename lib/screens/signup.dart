@@ -13,6 +13,7 @@ class _SignUpState extends State<SignUp> {
   final _password =TextEditingController();
   final _name =TextEditingController();
   int _sex = 0;
+  bool _accept = false;
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +92,17 @@ class _SignUpState extends State<SignUp> {
                   Text('Female'),
                 ],
               ),
-
+              Row(
+                children: [
+                  Checkbox(value: _accept, onChanged: (value) {
+                    setState(() {
+                      _accept = value ?? false;
+                      print(_accept);
+                    });
+                  }),
+                  Text('ยอมรับข้อตกลง....'),
+                ],
+              ),
             ],
           ),
         ),
