@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'signup.dart';
+
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
 
@@ -49,8 +51,7 @@ class _SignInState extends State<SignIn> {
               child: TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0)
-                  ),
+                      borderRadius: BorderRadius.circular(8.0)),
                   prefixIcon: Icon(Icons.person),
                   labelText: 'Username',
                 ),
@@ -65,8 +66,7 @@ class _SignInState extends State<SignIn> {
                 obscureText: _isObscure,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.0)
-                  ),
+                      borderRadius: BorderRadius.circular(8.0)),
                   labelText: 'Password',
                   prefixIcon: Icon(Icons.lock),
                   suffixIcon: IconButton(
@@ -76,9 +76,10 @@ class _SignInState extends State<SignIn> {
                         print(_isObscure);
                       });
                     },
-                    icon: Icon(_isObscure == false
-                        ? Icons.visibility
-                        : Icons.visibility_off,
+                    icon: Icon(
+                      _isObscure == false
+                          ? Icons.visibility
+                          : Icons.visibility_off,
                     ),
                   ),
                 ),
@@ -93,7 +94,30 @@ class _SignInState extends State<SignIn> {
                 child: Text("Login"),
               ),
             ),
-
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  child: Text("สร้างบัญชีเข้าสู่ระบบ?"),
+                ),
+                Container(
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignUp(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Sign-In",
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
