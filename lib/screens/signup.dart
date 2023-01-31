@@ -8,6 +8,10 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final _formKey = GlobalKey<FormState>();
+  final _email = TextEditingController();
+  final _password =TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,9 +22,11 @@ class _SignUpState extends State<SignUp> {
       body: Container(
         margin: EdgeInsets.all(10.0),
         child: Form(
+          key: _formKey,
           child: Column(
             children: [
               TextFormField(
+                controller: _email,
                   decoration: InputDecoration(
                     labelText: 'Email',
                     // icon: Icon(Icons.person),
