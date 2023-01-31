@@ -11,6 +11,7 @@ class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
   final _email = TextEditingController();
   final _password =TextEditingController();
+  final _name =TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +25,14 @@ class _SignUpState extends State<SignUp> {
         child: Form(
           key: _formKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               TextFormField(
                 controller: _email,
                   decoration: InputDecoration(
                     labelText: 'Email',
                     // icon: Icon(Icons.person),
-                    hintText: 'กรุณาป้อนข้อมูลอีเมลล์',
+                    hintText: 'กรุณาป้อนข้อมูล อีเมลล์',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -45,13 +47,29 @@ class _SignUpState extends State<SignUp> {
                 decoration: InputDecoration(
                   labelText: 'Password',
                   // icon: Icon(Icons.person),
-                  hintText: 'กรุณาป้อนข้อมูลรหัสผ่าน',
+                  hintText: 'กรุณาป้อนข้อมูล รหัสผ่าน',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: Icon(Icons.visibility),
                   suffixIcon: Icon(Icons.check),
                 ),
+                keyboardType: TextInputType.visiblePassword,
+              ),
+              SizedBox(height: 8.0),
+              TextFormField(
+                controller: _name,
+                decoration: InputDecoration(
+                  labelText: 'Full-name',
+                  // icon: Icon(Icons.person),
+                  hintText: 'กรุณาป้อนข้อมูล ชื่อ-สกุล',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  prefixIcon: Icon(Icons.account_box),
+                  suffixIcon: Icon(Icons.check),
+                ),
+                keyboardType: TextInputType.text,
               ),
             ],
           ),
