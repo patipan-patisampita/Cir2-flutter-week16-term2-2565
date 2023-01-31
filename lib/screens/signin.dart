@@ -23,65 +23,79 @@ class _SignInState extends State<SignIn> {
         centerTitle: true,
         title: Text("Sign-In System"),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image(
-              image: AssetImage('assets/images/login.png'),
-              height: 200,
-              width: 300),
-          Container(
-            child: Text(
-              "Sing-In System",
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.purple,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+                image: AssetImage('assets/images/login.png'),
+                height: 200,
+                width: 300),
+            Container(
+              child: Text(
+                "Sing-In System",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.purple,
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 20.0),
-          Container(
-            padding: EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.person),
-                labelText: 'Username',
+            SizedBox(height: 20.0),
+            Container(
+              height: 80,
+              width: double.maxFinite,
+              padding: EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0)
+                  ),
+                  prefixIcon: Icon(Icons.person),
+                  labelText: 'Username',
+                ),
+                keyboardType: TextInputType.emailAddress,
               ),
-              keyboardType: TextInputType.emailAddress,
             ),
-          ),
-          Container(
-            padding: EdgeInsets.all(8.0),
-            child: TextField(
-              obscureText: _isObscure,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Password',
-                prefixIcon: Icon(Icons.lock),
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      _isObscure = !_isObscure;
-                      print(_isObscure);
-                    });
-                  },
-                  icon: Icon(_isObscure == false
-                      ? Icons.visibility
-                      : Icons.visibility_off,
+            Container(
+              height: 80,
+              width: double.maxFinite,
+              padding: EdgeInsets.all(8.0),
+              child: TextField(
+                obscureText: _isObscure,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0)
+                  ),
+                  labelText: 'Password',
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _isObscure = !_isObscure;
+                        print(_isObscure);
+                      });
+                    },
+                    icon: Icon(_isObscure == false
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          Container(
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text("Login"),
+            Container(
+              height: 60,
+              width: double.maxFinite,
+              padding: EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text("Login"),
+              ),
             ),
-          ),
-        ],
+
+          ],
+        ),
       ),
     );
   }
