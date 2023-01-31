@@ -12,6 +12,7 @@ class _SignUpState extends State<SignUp> {
   final _email = TextEditingController();
   final _password =TextEditingController();
   final _name =TextEditingController();
+  int _sex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +72,26 @@ class _SignUpState extends State<SignUp> {
                 ),
                 keyboardType: TextInputType.text,
               ),
+              Row(
+                children: [
+                  Text('Sex'),
+                  Radio(value: 0, groupValue: _sex, onChanged: (value) {
+                    setState(() {
+                      _sex = value ?? 0;
+                      print(_sex);
+                    });
+                  }),
+                  Text('Male'),
+                  Radio(value: 1, groupValue: _sex, onChanged: (value) {
+                    setState(() {
+                      _sex = value ?? 0;
+                      print(_sex);
+                    });
+                  }),
+                  Text('Female'),
+                ],
+              ),
+
             ],
           ),
         ),
