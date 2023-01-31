@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widget/date_input_field.dart';
+
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
 
@@ -12,6 +14,8 @@ class _SignUpState extends State<SignUp> {
   final _email = TextEditingController();
   final _password =TextEditingController();
   final _name =TextEditingController();
+  final _dateInput = TextEditingController();
+
   int _sex = 0;
   bool _accept = false;
 
@@ -102,6 +106,9 @@ class _SignUpState extends State<SignUp> {
                   }),
                   Text('ยอมรับข้อตกลง....'),
                 ],
+              ),
+              DateInputField(
+                  dateInput:  _dateInput,
               ),
             ],
           ),
